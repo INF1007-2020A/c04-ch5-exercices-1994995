@@ -22,12 +22,18 @@ def use_prefixes() -> List[str]:
 
 def prime_integer_summation() -> int:
     sum = 0
-    for x in range(2,101): # x est le nombre a tester pour savoir si il est premier
+    n = 0
+    for x in range(2,999999): # x est le nombre a tester pour savoir si il est premier
         for y in range(2,x+1): # y est le nombre avec lequel on fait le test de primalite
             if y == x: # x a passe tous les tests de primalite, il est premier
                 sum += x
+                n += 1
+            if n == 100:
+                break
             if x%y == 0: # x n'est pas premier
                 break
+        if n == 100:
+            break
     return sum
 
 
@@ -48,6 +54,9 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
+    for x in groups: # parcourt les groupes
+        pass
+
     return []
 
 
