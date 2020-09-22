@@ -54,10 +54,28 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
+    valides = []
     for x in groups: # parcourt les groupes
-        pass
+        accept = True
+        if len(x) <= 3 or len(x) > 10:
+            accept = False
+        else:
+            septante = False
+            for i in x:
+                if i == 25:
+                    accept = True
+                    break
+                if i < 18:
+                    accept = False
+                if i > 70:
+                    septante = True
+                if septante == True:
+                    if i == 50:
+                        accept = False
 
-    return []
+        if accept == True:
+            valides.append(x)
+    return valides
 
 
 def main() -> None:
