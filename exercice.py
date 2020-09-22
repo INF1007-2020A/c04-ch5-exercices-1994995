@@ -54,7 +54,7 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    valides = []
+    verif = []
     for x in groups: # parcourt les groupes
         accept = True
         if len(x) <= 3 or len(x) > 10:
@@ -72,11 +72,8 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
                 if septante == True:
                     if i == 50:
                         accept = False
-
-        if accept == True:
-            valides.append(x)
-    return valides
-
+        verif.append(accept)
+    return verif
 
 def main() -> None:
     number = -4.325
