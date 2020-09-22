@@ -6,17 +6,29 @@ from typing import List
 
 
 def convert_to_absolute(number: float) -> float:
-    return 0
+    if number < 0:
+        number *= -1
+    return number
 
 
 def use_prefixes() -> List[str]:
     prefixes, suffixe = 'JKLMNOPQ', 'ack'
+    liste = []
+    for caractere in prefixes:
+        liste.append(caractere+suffixe)
 
-    return [""]
+    return liste
 
 
 def prime_integer_summation() -> int:
-    return 0
+    sum = 0
+    for x in range(2,101): # x est le nombre a tester pour savoir si il est premier
+        for y in range(2,x+1): # y est le nombre avec lequel on fait le test de primalite
+            if y == x: # x a passe tous les tests de primalite, il est premier
+                sum += x
+            if x%y == 0: # x n'est pas premier
+                break
+    return sum
 
 
 def factorial(number: int) -> int:
